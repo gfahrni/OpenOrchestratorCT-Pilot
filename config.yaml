@@ -1,0 +1,39 @@
+# config.yaml
+# Main configuration file for the Thoracic CT Orchestrator.
+# Enable or disable modules and set paths/options for each.
+
+# Device options:
+#   "cpu"   — no GPU, slow but always works
+#   "gpu"   — NVIDIA GPU (CUDA), fastest on HPC/workstation
+#   "gpu:1" — specific NVIDIA GPU by index (e.g. second GPU)
+#   "mps"   — Apple Silicon GPU (M1/M2/M3 Mac)
+
+modules:
+
+  totalsegmentator:
+    enabled: true
+    conda_env: "totalseg" # no github repo, TotalSegmentator is installed via pip in the totalseg conda environment
+    device: "gpu"
+
+  emphysema:
+    enabled: true
+    conda_env: "emphysema"
+    module_dir: "modules/Emphysema_Quantification" # clone github repo from github.com/bdrad/Emphysema_Quantification
+    device: "gpu"
+    threshold_hu: -950
+
+  lung_nodule:
+    enabled: true
+    conda_env: "nodules"
+    module_dir: "modules/LungNoduleDetection" # clone github repo from https://github.com/rlsn/LungNoduleDetection/
+    checkpoint: "modules/LungNoduleDetection/checkpoint" # checkpoint need to be downloaded separately from https://huggingface.co/rlsn/DeTr4LungNodule
+    # logit_threshold: raw model score cutoff
+    #   0.0  → ~50% confidence  (recommended, balanced precision/recall)
+    #  -5.0  → very permissive  (original eval.py default, many false positives)
+    logit_threshold: 0.0
+    # device options: "cpu" | "gpu" | "gpu:1" | "mps"
+    device: "cpu"
+
+
+output:
+  dir: "./outputs"

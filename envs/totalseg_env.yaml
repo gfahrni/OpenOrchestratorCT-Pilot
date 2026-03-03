@@ -1,0 +1,17 @@
+# totalseg_env.yaml
+# Conda environment for TotalSegmentator.
+# Source: https://github.com/wasserth/TotalSegmentator
+#
+# TotalSegmentator is installed via pip in the "totalseg" conda environment, so this file only specifies the pip dependency.
+
+name: totalseg
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - TotalSegmentator

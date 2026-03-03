@@ -1,0 +1,28 @@
+# Analysis modules — cloned separately by each user
+modules/
+
+# Patient data — never commit medical imaging data
+data-ct-nifti/
+
+# Generated reports
+outputs/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# VS Code — personal to your machine
+.vscode/
+
+# Conda/Python env folders if accidentally created in project
+*.egg
+.env
+env/
+venv/

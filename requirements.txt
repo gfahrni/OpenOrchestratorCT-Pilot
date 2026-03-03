@@ -1,0 +1,14 @@
+# requirements.txt
+# Dependencies for the orchestrator only.
+# Do NOT add dependencies for the three analysis modules here —
+# each module has its own conda environment (see envs/).
+
+pyyaml>=6.0
+nibabel>=5.0
+numpy>=1.24
+pydicom>=2.3
+scikit-image>=0.19
+scipy>=1.8
+opencv-python-headless>=4.6
+
+
