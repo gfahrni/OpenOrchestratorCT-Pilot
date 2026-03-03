@@ -58,7 +58,7 @@ OpenOrchestratorCT-Pilot/
 └── outputs/                      # NOT tracked by git — generated reports land here
 ```
 
-![](assets/pipeline.png.png)
+![Project structure](assets/pipeline.png.png)
 
 ---
 
