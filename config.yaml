@@ -2,12 +2,6 @@
 # Main configuration file for the Thoracic CT Orchestrator.
 # Enable or disable modules and set paths/options for each.
 
-# Device options:
-#   "cpu"   — no GPU, slow but always works
-#   "gpu"   — NVIDIA GPU (CUDA), fastest on HPC/workstation
-#   "gpu:1" — specific NVIDIA GPU by index (e.g. second GPU)
-#   "mps"   — Apple Silicon GPU (M1/M2/M3 Mac)
-
 modules:
 
   totalsegmentator:
